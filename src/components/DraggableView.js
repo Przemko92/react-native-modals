@@ -138,9 +138,11 @@ export default class DraggableView extends Component<Props> {
   }
 
   panResponder = PanResponder.create({
-    onMoveShouldSetPanResponder: (evt, gestureState) => (
-      gestureState.dx !== 0 && gestureState.dy !== 0
-    ),
+    onMoveShouldSetPanResponder: (evt, gestureState) => {
+      const { dx, dy } = gestureState
+
+      return dx > 4 || dx < -4 || dy > 4 || dy < -4
+    },
     onStartShouldSetPanResponder: () => true,
     onPanResponderMove: (event, gestureState) => {
       const isVerticalSwipe = d => ['up', 'down'].includes(d);

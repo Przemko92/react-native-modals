@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",
-    "build": "npm run clean && babel src/ -d dist/",
+    "build": "babel src/ -d dist/",
     "clean": "rimraf dist"
   },
   "repository": {
@@ -29,7 +29,9 @@
   "license": "MIT",
   "homepage": "https://github.com/jacklam718/react-native-modals/blob/master/README.md",
   "dependencies": {
+    "babel": "^6.23.0",
     "babel-plugin-flow-react-proptypes": "^9.1.1",
+    "global": "^4.4.0",
     "prop-types": "^15.6.0",
     "react-native-root-siblings": "^3.2.2"
   },
